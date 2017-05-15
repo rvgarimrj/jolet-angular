@@ -1,0 +1,52 @@
+@import "src/styles.scss";
+
+.dropdown-button {
+   background-color: #0045F9;
+}
+.dropdown-content li > a, .dropdown-content li > span {
+   color: #0045F9;
+}
+.menu_cadastros {
+   margin-left: 20px;
+   text-shadow: 1px 1px 2px rgba(145, 145, 145, 1);
+   font-weight: 500;
+}
+.menu_pedidos {
+   margin-left: 25px;
+   text-shadow: 1px 1px 2px rgba(145, 145, 145, 1);
+   font-weight: 500;
+}
+.menu_financeiro {
+   margin-left: 20px;
+   text-shadow: 1px 1px 2px rgba(145, 145, 145, 1);
+   font-weight: 500;
+}
+.menu_conta {
+   margin-left: 35px;
+   text-shadow: 1px 1px 2px rgba(145, 145, 145, 1);
+   font-weight: 500;
+}
+.menu_relatorios {
+   margin-left: 20px;
+   text-shadow: 1px 1px 2px rgba(145, 145, 145, 1);
+   font-weight: 500;
+}
+i.menu.material-icons.left {
+   margin-left: 10px !important;
+   margin-right: 10px !important;
+   font-size: 2em;
+}
+
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: portrait) {
+   .dropdown-button[_ngcontent-c3]{
+      margin-bottom: 20px;
+   }
+}
+
+.dashboard{ 
+  margin-top: 10px !important;
+}

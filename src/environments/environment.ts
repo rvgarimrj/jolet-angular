@@ -4,5 +4,18 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api_base_url: 'http://localhost:3000/api/v1/',
+  logo_name:'3Jolet',
+  token_auth_config: {
+    apiBase: 'http://localhost:3000/api/v1',
+      signInRedirect: '/',
+      resetPasswordCallback: 'http://localhost:4200/esqueci-minha-senha',
+      globalOptions: {
+        headers: {
+          'Content-Type':     'application/json',
+          'Accept':           'application/json'
+        }
+      }
+    }
 };

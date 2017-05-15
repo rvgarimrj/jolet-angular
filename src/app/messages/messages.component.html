@@ -1,0 +1,9 @@
+<div *ngIf="!hasCompany"  class="row">
+  <ul class="collapsible popout" data-collapsible="accordion" materialize="collapsible">
+    <li>
+      <div class="collapsible-header"><span class="new badge red" data-badge-caption="nova(s)">1</span><i class="material-icons">email</i>Mensagens</div>
+      <div class="collapsible-body"><p>Complete seu cadastro para libarar todas as funcionalidades do site ! Clique <a [routerLink]="['/perfil']">aqui</a>
+      </p></div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,107 @@
+<!-- Dropdown Structure -->
+<div class="navbar-fixed hide-on-small-only">
+  <nav>
+    <div class="nav-wrapper blue">
+      <div *ngIf="hasCompany">
+        <a [routerLink]="['']" id="logo-container" class="brand-logo" >{{companyName}}</a>
+      </div>
+      <div *ngIf="!hasCompany">
+        <a [routerLink]="['']" id="logo-container" class="brand-logo" >{{logo}}</a>
+      </div>
+      <ul class="right">
+
+        <li *ngIf="!tokenAuthService.userSignedIn()"> 
+          <a [routerLink]="['/login']">ENTRAR</a>
+        </li>
+
+        <li *ngIf="!tokenAuthService.userSignedIn()">
+          <a  [routerLink]="['/cadastrar-se']" 
+              class="waves-effect waves-orange btn signup-button">Cadastrar-se 
+              <i class="material-icons right">person_add</i>
+          </a>
+        </li>
+        
+        <li *ngIf="tokenAuthService.userSignedIn()"> 
+          <a [routerLink]="['/primeira-vez']"><i class="material-icons">live_help</i></a>
+        </li>
+
+        <!-- Dropdown Structure
+        
+        <a class='dropdown-button btn blue darken-4' href='#' data-activates='dropdown1'><i class="menu material-icons left">mode_edit</i></a>
+
+        <ul id='dropdown1' class='dropdown-content'>
+          <li ><a class="blue-text text-darken-2" href="#!">Vendedor</a></li>
+          <li><a class="blue-text text-darken-2" href="#!">Fornecedor</a></li>
+          <li><a class="blue-text text-darken-2" href="#!">Produto</a></li>
+          <li class="divider"></li>
+          <li><a href="#!">three</a></li>
+          <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+          <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+        </ul-->
+
+        <li  *ngIf="tokenAuthService.userSignedIn()">
+          <div *ngIf="hasPhoto" >
+            <a [routerLink]="['/perfil']" class="nav-picture" [ngStyle]="{'background-image': 'url(' + img + ')'}"></a>
+          </div>
+          <div *ngIf="!hasPhoto" >
+             <a [routerLink]="['/perfil']"><i class="material-icons">face</i></a>
+          </div>
+        </li>
+        <li *ngIf="tokenAuthService.userSignedIn()"> 
+          <a (click)="refresh()"><i class="material-icons">autorenew</i></a>
+        </li>
+        <li *ngIf="tokenAuthService.userSignedIn()"> 
+          <a (click)="logOut()"><i class="fa fa-sign-out fa-3" aria-hidden="true"></i></a>
+        </li>
+        
+        <!--li  *ngIf="tokenAuthService.userSignedIn()">
+          <i class="material-icons alert-icon">announcement</i>
+        </li-->
+        
+      </ul>
+    </div>
+  </nav>
+</div>
+<nav class="hide-on-med-and-up blue">
+  <div class="container">
+    <ul id="slide-out" class="side-nav fixed">
+      <li class="logo" style="text-align: center;">
+        
+      </li>
+      <li *ngIf="!tokenAuthService.userSignedIn()"> 
+          <a [routerLink]="['/login']">ENTRAR</a>
+        </li>
+
+        <li *ngIf="!tokenAuthService.userSignedIn()">
+          <a  [routerLink]="['/cadastrar-se']"
+              class="waves-effect waves-orange btn sign-up-button">Cadastrar-se 
+              <i class="material-icons right">person_add</i>
+          </a>
+        </li>
+
+        <li *ngIf="tokenAuthService.userSignedIn()"> 
+          <a [routerLink]="['/primeira-vez']"><i class="material-icons">live_help</i></a>
+        </li>
+        <li *ngIf="tokenAuthService.userSignedIn()"> 
+          <a (click)="refresh()"><i class="material-icons">autorenew</i></a>
+        </li>
+        <!--li *ngIf="tokenAuthService.userSignedIn()"> 
+          <a [routerLink]="['/perfil']"><i class="material-icons">dashboard</i></a>
+        </li-->
+
+        <li *ngIf="tokenAuthService.userSignedIn()"> 
+          <a (click)="logOut()"><i class="fa fa-sign-out fa-3" aria-hidden="true"></i></a>
+        </li>
+        
+    </ul>
+    <a href="#" materialize="sideNav" [materializeParams]="[{edge:'left'}]" data-activates="slide-out"
+       class="button-collapse">
+      <i class="fa fa-bars fa-2x"></i>
+    </a>
+  </div>
+</nav>
+<div *ngIf="tokenAuthService.userSignedIn()">
+  <app-messages></app-messages>
+  <app-dashboard></app-dashboard>
+</div>
+  

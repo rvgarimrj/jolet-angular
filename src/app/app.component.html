@@ -1,4 +1,9 @@
-<h1>
-  {{title}}
-</h1>
-<router-outlet></router-outlet>
+<app-toolbar></app-toolbar>
+
+<div class="container">
+  
+  <router-outlet>
+    <span *ngIf="showLoader" class="loading"></span>
+  </router-outlet>
+  <simple-notifications></simple-notifications>
+</div>

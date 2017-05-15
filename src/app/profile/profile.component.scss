@@ -1,0 +1,20 @@
+
+.profile-picture{
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin-top: 10px;
+  
+}
+
+.user-icon {
+  font-size: 5em;
+}
+
+.ng-invalid.ng-touched {
+     border-bottom: 1px solid red;
+     box-shadow: 0 1px 0 0 #000;
+}

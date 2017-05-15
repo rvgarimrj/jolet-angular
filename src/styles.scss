@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~materialize-css/sass/components/color';
+$secondary-color: color("blue", "darken-4");
+$roboto-font-path: "~materialize-css/fonts/roboto/";
+@import "~materialize-css/sass/materialize.scss";
+
+.error {
+   -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+   border:2px solid #EBCCD1;
+   background-color: #F2DEDE;
+   color: #A94442;
+   font-weight: 700;
+}
+.error_span {
+   padding: 10px;
+}
+.signup-button{
+  margin-top: 12px !important;
+  // background-color: #0045F9 !important;
+}
+ 

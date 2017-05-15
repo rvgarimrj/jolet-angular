@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col s12">
+    <h3>Deletar conta</h3>
+    <div class="card-panel red lighten-2">
+      <span class="white-text">Atenção ! Deletar sua conta irá apagar todos os seus dados, fotos de produtos, seu histórico de vendas, produtos cadastrados, clientes, fornecedores.
+        Deseja realmente excluir sua conta ? Esta operação não tem volta.
+      </span>
+    </div>
+    <div class="col s6">
+      <a [routerLink]="['/home']" class="waves-effect waves-light blue accent-2 btn"><i class="material-icons left">arrow_back</i>CANCELAR</a>
+    </div>
+    <div class="col s6">
+      <a (click)="deleteAccount()" class="waves-effect waves-light red darken-4 btn"><i class="material-icons left">delete_forever</i>Sim, excluir</a>
+    </div>  
+  </div>
+</div>

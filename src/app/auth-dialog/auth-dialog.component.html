@@ -1,0 +1,42 @@
+<div class="modal" materialize="modal" [materializeActions]="modalActions">
+
+
+  <div class="modal-content">
+
+    <div class="row">
+
+      <div class="row">
+
+        <span class="modal-close right">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </span>
+      </div>
+
+      <div class="row">
+        <h3 class="grey-text text-darken-2">{{authMode}}</h3>
+
+        <app-login (onFormResult)="onLoginFormResult($event)"
+                        *ngIf="isLoginMode()">
+
+        </app-login>
+        <app-register (onFormResult)="onRegisterFormResult($event)"
+                           *ngIf="isRegisterMode()">
+
+        </app-register>
+      </div>
+
+
+      <div class="row">
+        <span class="grey-text text-darken-2" *ngIf="isLoginMode()">
+          Precisa de uma conta? <a (click)="authMode='Cadastro'">Clique aqui e cadastre-se.</a>
+        </span>
+        <span class="grey-text text-darken-2" *ngIf="isRegisterMode()">
+          Já tem uma conta? <a (click)="authMode='Login'">Clique aqui para entrar.</a>
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

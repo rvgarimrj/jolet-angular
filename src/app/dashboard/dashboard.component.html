@@ -1,0 +1,60 @@
+<div class="dashboard">
+  <div class="row">
+    <div *ngIf="hasCompany && isOwner"  class="col s6 m2">
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">Vendedor<span class="badge"></span></a></li>
+        <li><a href="#!">Fornecedor<span  class="badge"></span></a></li>
+        <li><a href="#!">Produto</a></li>
+      </ul>
+      <a class="btn dropdown-button" href="#!" data-activates="dropdown1" materialize="dropdown" ng-reflect-materialize="dropdown"><i class="menu material-icons left">mode_edit</i></a>
+      <span class="menu_cadastros">Cadastros</span>
+    </div>
+
+    <div *ngIf="hasCompany" class="col s6 m2">
+      <ul id="dropdown2" class="dropdown-content">
+      <li><a href="#!">Compra<span class="badge"></span></a></li>
+      <li><a href="#!">Venda<span class="badge"></span></a></li>
+      <li><a href="#!">Devolução</a></li>
+    </ul>
+    <a class="btn dropdown-button" href="#!" data-activates="dropdown2" materialize="dropdown" ng-reflect-materialize="dropdown"><i class="menu material-icons left">assignment_turned_in</i></a>
+    <span class="menu_pedidos">Pedidos</span>
+    </div>
+  
+    <div *ngIf="hasCompany && isOwner" class="col s6 m2">
+      <ul id="dropdown3" class="dropdown-content">
+      <li><a href="#!">Vendedor<span class="badge"></span></a></li>
+      <li><a href="#!">Fornecedor<span class="badge"></span></a></li>
+      <li><a href="#!">Produto</a></li>
+    </ul>
+    <a class="btn dropdown-button" href="#!" data-activates="dropdown3" materialize="dropdown" ng-reflect-materialize="dropdown"><i class="menu material-icons left">monetization_on</i></a>
+    <span class="menu_financeiro">Financeiro</span>
+    
+    </div>
+
+  <div class="row">
+    <div class="col s6 m2">
+      <ul id="dropdown4" class="dropdown-content">
+      <li><a [routerLink]="['/perfil']">Perfil<span class="badge"></span></a></li>
+      <li> <a [routerLink]="['/mudar-senha']">Mudar senha<span class="badge"></span></a></li>
+      <li><a [routerLink]="['/cancelar-conta']">Cancelar conta</a></li>
+    </ul>
+    <a class="btn dropdown-button" href="#!" data-activates="dropdown4" materialize="dropdown" ng-reflect-materialize="dropdown"><i class="menu material-icons left">face</i></a>
+    <span class="menu_conta">Conta</span>
+    
+    </div>
+
+    <div *ngIf="hasCompany && isOwner" class="col s6 m2">
+      <ul id="dropdown5" class="dropdown-content">
+      <li><a href="#!">Vendedor<span class="badge"></span></a></li>
+      <li><a href="#!">Fornecedor<span class="badge"></span></a></li>
+      <li><a href="#!">Produto</a></li>
+    </ul>
+    <a class="btn dropdown-button" href="#!" data-activates="dropdown5" materialize="dropdown" ng-reflect-materialize="dropdown"><i class="menu 
+    material-icons left">pie_chart</i></a>
+    <span class="menu_relatorios">Relatórios</span>
+    
+    </div>
+  </div>  
+</div>
+ <!-- Dropdown Trigger -->
+  

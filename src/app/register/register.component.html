@@ -1,0 +1,78 @@
+<div class="row">
+  <h3>Criar conta</h3>
+</div>
+<form (ngSubmit)="onSignUpSubmit()" #f="ngForm" materialize>
+  <div class="row">
+    <div class="input-field col s12">
+      <i class="tiny material-icons prefix">email</i>
+      <input id="email"
+             type="email"
+             required
+             name='email'
+             [(ngModel)]="signUpUser.email"
+             class="validate"
+             >
+      <label for="email">Email</label>
+    </div>
+
+
+
+    <div class="input-field col s12">
+      <i class="tiny material-icons prefix">vpn_key</i>
+      <input id="password"
+             type="password"
+             required
+             name='password'
+             [(ngModel)]="signUpUser.password"
+             minlength="8"
+             #name= "ngModel"
+             class="validate"
+             data-error="wrong" data-success="right">
+      <label for="password">Senha</label>
+      <div *ngIf="name.errors && (name.dirty || name.touched)" >
+        <div class="col s12 error" [hidden]="!name.errors.required">
+          <span class="error_span">Senha é obrigatória</span>
+        </div>
+        <div class="col s12 error" [hidden]="!name.errors.minlength">
+          <span class="error_span">Senha deve ter no mínimo 8 caracteres</span>
+        </div>
+    </div>
+    </div>
+    <div class="input-field col s12">
+      <i class="tiny material-icons prefix">vpn_key</i>
+      
+      <input id="password_confirmation"
+             type="password"
+             required
+             name='password_confirmation'
+             [(ngModel)]="signUpUser.passwordConfirmation"
+             class="validate">
+      <label for="password_confirmation">Confimação de senha</label>
+    </div>
+
+    <span *ngIf="(signUpUser.passwordConfirmation != '' ) && (signUpUser.password != signUpUser.passwordConfirmation)"
+          style="color:red">
+      Senhas devem ser iguais
+    </span>
+
+
+    <div class="col s12">
+
+      <button type="submit"
+              [disabled]="!(f.valid) || !(signUpUser.password == signUpUser.passwordConfirmation)"
+              class="waves-effect waves-light btn blue right">
+            Enviar<i class="material-icons right">send</i>
+      </button>
+
+    </div>
+
+  </div>
+
+
+</form>
+<div class="row">
+        <span class="grey-text text-darken-2">
+          Já tem uma conta? <a [routerLink]="['/login']">Clique aqui e faça login.</a>
+        </span>
+        
+</div>
