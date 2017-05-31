@@ -35,7 +35,7 @@ export class ProfileComponent implements OnInit {
 
     this.editForm = this.fb.group({
       name: [""],
-      email: ["", Validators.required],
+      email: [{value: "", disabled: true}, Validators.required],
       nickname: [""],
       kind_of_user: ["", Validators.required],
       company_name: ["", Validators.required],
@@ -100,7 +100,7 @@ export class ProfileComponent implements OnInit {
           }
           this.editForm = this.fb.group({
             name: [this.user.name],
-            email: [this.user.email, Validators.required],
+            email: [{value: this.user.email, disable: true}, Validators.required],
             nickname: [this.user.nickname],
             kind_of_user: [this.user.kind_of_user,Validators.required],
             company_name: ["",Validators.required],
@@ -128,7 +128,7 @@ export class ProfileComponent implements OnInit {
           }
           this.editForm = this.fb.group({
             name: [this.user.name],
-            email: [this.user.email, Validators.required],
+            email: [{value:this.user.email,disabled: true}, Validators.required],
             nickname: [this.user.nickname],
             kind_of_user: [this.user.kind_of_user, Validators.required],
             company_name: [this.user.company.company_name,Validators.required],
@@ -191,16 +191,16 @@ export class ProfileComponent implements OnInit {
         );
         this.loaderService.display(false);
       }, error => { 
-        console.log(error.json());
+        console.log('err = '+JSON.stringify(error, null, 2))
+        // console.log(error.json());
         this.NotificationsService.error(
           'Falha ao atualizar',
-          error.json().error[0],
+          JSON.stringify(error, null, 2),
           {
               timeOut: 5000,
               showProgressBar: true,
               pauseOnHover: false,
               clickToClose: true,
-              maxLength: 30,
               lastOnBottom: true
           }
         );

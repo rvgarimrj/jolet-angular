@@ -29,6 +29,7 @@ import { DeleteAccountComponent } from './users/delete-account/delete-account.co
 import { ResetPasswordComponent } from './users/reset-password/reset-password.component';
 import { FormDebugComponent } from './form-debug/form-debug.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { DropdownComponent } from './dropdown/dropdown.component';
     DeleteAccountComponent,
     ResetPasswordComponent,
     FormDebugComponent,
-    DropdownComponent
+    DropdownComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

@@ -139,7 +139,6 @@ export class UsersService {
  
   update(params, photo){
     // this.emittCompany(params.short_name);
-    
     return this._tokenService.put('users/', {"user":
                                               {"name": params.name,
                                               "email": params.email,
@@ -155,8 +154,13 @@ export class UsersService {
                                                         "zipcode": params.zipcode,
                                                         "state": params.state,
                                                         "phone": params.phone,
-                                                        "neighborhood": params.neighborhood
+                                                        "neighborhood": params.neighborhood,
+                                                        "company_email": params.company_email,
                                                         }
-                                            }).map(res => res.json());
+                                            }).map(res => { 
+                                              console.log(res.json());
+                                              res.json() 
+                                              
+                                          }).catch(err => Observable.throw(err.json()))
   }
 }
