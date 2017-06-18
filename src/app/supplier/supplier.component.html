@@ -1,0 +1,34 @@
+<div *ngIf="hasCompany && isOwner" class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+  <a class="btn-floating pulse btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>  
+</div>
+  <div class="row">
+    <div class="col s12 hide-on-med-and-up ">
+      <ul class="collection with-header">
+          <li class="collection-header"><h4>Fornecedores</h4></li>
+          <li class="collection-item"
+            *ngFor="let supplier of suppliers">
+              <a 
+              
+                [routerLink]="[supplier.id]">
+                {{supplier.name}}
+              </a>  
+          </li>
+      </ul>
+    </div>
+    <div class="col s6 hide-on-small-only ">
+      <ul class="collection with-header">
+          <li class="collection-header"><h4>Fornecedores</h4></li>
+          <li class="collection-item"
+            *ngFor="let supplier of suppliers">
+              <a 
+              
+                [routerLink]="[supplier.id]">
+                {{supplier.name}}
+              </a>  
+          </li>
+      </ul>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+
+

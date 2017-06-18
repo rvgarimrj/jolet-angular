@@ -101,7 +101,7 @@ export class UsersService {
     return this._tokenService.get('current_user', {}).map(res => 
     { 
       // console.log(res.json());
-      if (res.json().kind_of_user == 0){
+      if (res.json().kind_of_user == 0 || res.json().kind_of_user == 2 ){
         this.userisOwner$.next(true);
       }
       else {

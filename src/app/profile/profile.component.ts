@@ -91,13 +91,14 @@ export class ProfileComponent implements OnInit {
           }
           this.result.company = this.company;
           this.user = new User(this.result);
+          console.log(this.user);
           
-          if(this.user.photo.thumb.url != null && this.user.photo.thumb.url != ""){
-            this.img = this.user.photo.thumb.url;
-          }
-          else {
-            this.img="http://res.cloudinary.com/dgekdykfj/image/upload/v1492364432/images_r604qc.png";
-          }
+            if(this.user.photo.thumb.url != null && this.user.photo.thumb.url != ""){
+              this.img = this.user.photo.thumb.url;
+            }
+            else {
+              this.img="http://res.cloudinary.com/dgekdykfj/image/upload/v1492364432/images_r604qc.png";
+            }
           this.editForm = this.fb.group({
             name: [this.user.name],
             email: [{value: this.user.email, disable: true}, Validators.required],
@@ -120,6 +121,7 @@ export class ProfileComponent implements OnInit {
         }
         else {
           this.user = new User(data);
+          // console.log(this.user);
           if(this.user.photo.thumb.url != null && this.user.photo.thumb.url != ""){
             this.img = this.user.photo.thumb.url;
           }

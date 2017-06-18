@@ -1,0 +1,84 @@
+<div class="col s6 hide-on-small-only">
+  <div class="card">
+    <div class="card-image">
+      <img src="assets/images/supplier_background.jpg">
+      <span class="card-title">{{ supplier.name }}</span>
+    </div>
+    <div class="card-content">
+      <p>Email: {{ supplier.email }}</p>
+      <p>Tel: {{ supplier.phone }}</p>
+      <p>Contato: {{ supplier.contact }}</p>
+    </div>
+    <!--div class="card-action">
+      <a href="#">This is a link</a>
+    </div-->
+  </div>
+  <div *ngIf="hasCompany && isOwner" class="row" >
+    <div class="col s6">
+      <a (click)="editSupplier()" 
+      class="waves-effect waves-light btn"><i class="material-icons left hide-on-small-only">mode_edit</i>Editar</a>  
+    </div>
+    <div class="col s6">
+      <!-- Modal Trigger -->
+<a class="waves-effect waves-light btn modal-trigger" (click)="openModal()">Modal</a>
+ 
+<!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet" materialize="modal" [materializeActions]="modalActions">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a class="waves-effect waves-green btn-flat" (click)="closeModal()">Close</a>
+    <a class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
+      <!--a class="waves-effect waves-light red darken-4 btn" href="#modal1">Excluir</a>
+
+      < Modal Structure >
+      <div materialize="modal" id="modal1" class="modal" >
+        <div class="modal-content">
+          <h4>Exclusão de fornecedor. Atenção !</h4>
+          <p>A exclusão de um fornecedor implica na exclusão de todos os produtos relacionados a este fornecedor. Esta ação é irreversível.</p>
+          <p>Tem certeza que deseja excluir o fornecedor {{supplier.name}} ?</p>
+        </div>
+        <div class="modal-footer">
+          <a  class="modal-action modal-close waves-effect waves-light blue darken-4 btn">Cancelar</a>
+          <a (click)="deleteSupplier()" class="modal-action modal-close waves-effect waves-light red darken-4 btn">Sim</a>
+          
+        </div>
+      </div>
+      <End of modal structure -->
+
+      <!--a (click)="deleteSupplier()" 
+      class="waves-effect waves-light red darken-4 btn"><i class="material-icons left hide-on-small-only">delete_forever</i>Excluir</a-->
+    </div>
+  </div>
+</div>
+
+<div class="col s12 hide-on-med-and-up">
+  <div class="card">
+    <div class="card-image">
+      <img src="assets/images/supplier_background.jpg">
+      <span class="card-title">{{ supplier.name }}</span>
+    </div>
+    <div class="card-content">
+      <p>Email: {{ supplier.email }}</p>
+      <p>Tel: {{ supplier.phone }}</p>
+      <p>Contato: {{ supplier.contact }}</p>
+    </div>
+    <!--div class="card-action">
+      <a href="#">This is a link</a>
+    </div-->
+  </div>
+  <div *ngIf="hasCompany && isOwner" class="row" >
+    <div class="col s6">
+      <a (click)="editSupplier()"
+      class="waves-effect waves-light btn"><i class="material-icons left hide-on-small-only">mode_edit</i>Editar</a>  
+    </div>
+    <div class="col s6">
+      <a (click)="deleteSupplier()" 
+      class="waves-effect waves-light red darken-4 btn"><i class="material-icons left hide-on-small-only">delete_forever</i>Excluir</a>
+    </div>
+  </div>
+</div>

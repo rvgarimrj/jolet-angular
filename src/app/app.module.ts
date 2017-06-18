@@ -1,3 +1,4 @@
+import { SupplierModule } from './supplier/supplier.module';
 import { MaterializeModule } from 'angular2-materialize';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -30,6 +31,7 @@ import { ResetPasswordComponent } from './users/reset-password/reset-password.co
 import { FormDebugComponent } from './form-debug/form-debug.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { SupplierComponent } from './supplier/supplier.component';
 
 
 @NgModule({
@@ -58,10 +60,13 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule,
-    MaterializeModule,
     ReactiveFormsModule,
-    SimpleNotificationsModule.forRoot()
+    SupplierModule,
+    SimpleNotificationsModule.forRoot(),
+    AppRoutingModule,
+    MaterializeModule
+    
+    
   ],
   providers: [ Angular2TokenService, UsersService, LoaderService],
   bootstrap: [AppComponent]

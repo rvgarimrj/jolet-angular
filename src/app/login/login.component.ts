@@ -80,7 +80,7 @@ export class LoginComponent implements OnInit {
       }
   }
   onSignInSubmit(){
-      console.log(this.signInUser);
+      // console.log(this.signInUser);
       this.UserService.logInUser(this.signInUser).subscribe(
       res => {
         this.result = res;
